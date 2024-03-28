@@ -30,4 +30,14 @@ class GalacticGuardianGame extends FlameGame with PanDetector {
   void onPanUpdate(DragUpdateInfo info) {
     spaceShip.move(info.delta.global);
   }
+
+  @override
+  void onPanStart(DragStartInfo info) {
+    spaceShip.launchTorpedos();
+  }
+
+  @override
+  void onPanEnd(DragEndInfo info) {
+    spaceShip.stopTorpedos();
+  }
 }
